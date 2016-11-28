@@ -115,4 +115,17 @@ public class PessoaRepository {
 		entityManager.merge(pessoaEntity);
 	}
 
+	/*
+	 * Metodo para excluir pessoas, metodo mais legal do sul do mundo remove os
+	 * registross do banco e tals
+	 */
+	public void ExcluirRegistro(int codigo) {
+
+		entityManager = Uteis.JpaEntityManager();
+
+		PessoaEntity pessoaEntity = this.GetPessoa(codigo);
+
+		entityManager.remove(pessoaEntity);
+	}
+
 }
